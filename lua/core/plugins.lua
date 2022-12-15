@@ -28,13 +28,44 @@ return require('packer').startup(function(use)
   }
 
   use {
+    'beauwilliams/statusline.lua',
+    config = function()
+      require("configs.Statusline")
+      return {}
+    end
+  }
+
+  use {
+    'neovim/nvim-lspconfig',
+    config = function()
+      require("configs.NvimLspConfig")
+      return {}
+    end
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require("configs.NvimTreesitter")
+      return {}
+    end
+  }
+
+  use {
     'nvim-tree/nvim-tree.lua',
     config = function()
       require("configs.NvimTree")
       return {}
     end
   }
- 
+
+  use {
+    'windwp/nvim-autopairs',
+    config = function()
+      require("configs.NvimAutoPairs")
+      return {}
+    end
+  }
 
   if packer_bootstrap then
     require('packer').sync()
