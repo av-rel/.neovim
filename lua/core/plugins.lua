@@ -15,45 +15,105 @@ return require('packer').startup(function(use)
 
   use 'wbthomason/packer.nvim'
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  use { 'github/copilot.vim', config = function()
+    vim.g.copilot_autostart = 1
+    vim.g.copilot_opacity = 0.55
+    return {}
+  end }
+
+  use { 'Mofiqul/vscode.nvim',
+    config = function()
+      local c = require('vscode.colors')
+      require('vscode').setup({
+        transparent = true,
+        italic_comments = true,
+        disable_nvimtree_bg = false,
+        color_overrides = {
+          vscLineNumber = '#FFFFFF',
+        },
+        group_overrides = {
+          Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+        }
+      })
+      return {}
+    end
   }
 
   use {
     'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons',
-    },
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
-      require('plugins.nvimtree')
+      require("nvim-tree").setup({
+        sort_by = "case_sensitive",
+        view = {
+          adaptive_size = true,
+          mappings = {
+            list = {
+              { key = "u", action = "dir_up" },
+            },
+          },
+        },
+        renderer = {
+          group_empty = true,
+        },
+        filters = {
+          dotfiles = true,
+        },
+      })
+      return {}
     end
   }
 
   use {
-    'nvim-telescope/telescope.nvim', tag = '0.1.0',
-    requires = { { 'nvim-lua/plenary.nvim' } },
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
-      require('plugins.telescope')
+      require('lualine').setup({
+        options = {
+          icons_enabled = true,
+          theme = 'vscode',
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+          disabled_filetypes = {
+            statusline = {},
+            winbar = {},
+          },
+          ignore_focus = {},
+          always_divide_middle = true,
+          globalstatus = false,
+          refresh = {
+            statusline = 300,
+            tabline = 300,
+            winbar = 300,
+          }
+        },
+        sections = {
+          lualine_a = { 'mode' },
+          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_c = { 'filename' },
+          lualine_x = { 'encoding', 'fileformat', 'filetype' },
+          lualine_y = { 'progress' },
+          lualine_z = { 'location' }
+        },
+        inactive_sections = {
+          lualine_a = {},
+          lualine_b = {},
+          lualine_c = { 'filename' },
+          lualine_x = { 'location' },
+          lualine_y = {},
+          lualine_z = {}
+        },
+        tabline = {},
+        winbar = {},
+        inactive_winbar = {},
+        extensions = {}
+      })
+      return {}
     end
   }
-
-  use { 'github/copilot',
-    config = function()
-      require('plugins.copilot')
-    end
-  }
-
-  use({
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    config = function()
-      local saga = require("lspsaga")
-      saga.init_lsp_saga()
-    end,
-  })
 
   if packer_bootstrap then
     require('packer').sync()
   end
+
 end)
