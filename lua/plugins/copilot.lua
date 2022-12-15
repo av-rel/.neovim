@@ -1,0 +1,1 @@
+copilot.setCompletionBackgroundOpacity(0.65)
