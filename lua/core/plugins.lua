@@ -21,24 +21,6 @@ return require('packer').startup(function(use)
     return {}
   end }
 
-  use { 'Mofiqul/vscode.nvim',
-    config = function()
-      local c = require('vscode.colors')
-      require('vscode').setup({
-        transparent = true,
-        italic_comments = true,
-        disable_nvimtree_bg = false,
-        color_overrides = {
-          vscLineNumber = '#FFFFFF',
-        },
-        group_overrides = {
-          Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
-        }
-      })
-      return {}
-    end
-  }
-
   use {
     'nvim-tree/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons' },
@@ -71,7 +53,7 @@ return require('packer').startup(function(use)
       require('lualine').setup({
         options = {
           icons_enabled = true,
-          theme = 'vscode',
+          theme = 'auto',
           component_separators = { left = '', right = '' },
           section_separators = { left = '', right = '' },
           disabled_filetypes = {
