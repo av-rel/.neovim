@@ -1,4 +1,4 @@
-local ok, autopairs = pcall(require, "nvim-autopairs")
+local ok, _ = pcall(require, "nvim-autopairs")
 
 if not ok then
     vim.notify_once("nvim-autopairs not installed")
@@ -10,6 +10,6 @@ local options = {
     enable_check_bracket_line = false,
 }
 
-autopairs.setup(options)
+_.setup(options)
 
-return {}
+return options

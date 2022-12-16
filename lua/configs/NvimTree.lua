@@ -1,11 +1,11 @@
-local ok, nvim_tree = pcall(require, "nvim-tree")
+local ok, _ = pcall(require, "nvim-tree")
 
 if not ok then
   vim.notify_once("nvim-tree not installed")
   return {}
 end
 
-nvim_tree.setup({
+local opts = {
   view = {
     adaptive_size = false,
     centralize_selection = false,
@@ -66,31 +66,31 @@ nvim_tree.setup({
         git = true,
       },
       glyphs = {
-        -- default = "",
-        -- symlink = "",
-        -- bookmark = "",
+        -- default = "",
+        -- symlink = "",
+        -- bookmark = "",
         -- folder = {
-        --   arrow_closed = "",
-        --   arrow_open = "",
-        --   default = "",
-        --   open = "",
-        --   empty = "",
-        --   empty_open = "",
-        --   symlink = "",
-        --   symlink_open = "",
+        -- arrow_closed = "",
+        -- arrow_open = "",
+        -- default = "",
+        -- open = "",
+        -- empty = "",
+        -- empty_open = "",
+        -- symlink = "",
+        -- symlink_open = "",
         -- },
         git = {
           unstaged = "✗",
           staged = "✓",
-          unmerged = "",
+          -- unmerged = "",
           renamed = "➜",
           untracked = "★",
-          deleted = "",
+          -- deleted = "",
           ignored = "◌",
         },
       },
     },
-    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "package.json", "go.mod" },
+    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "package.json", "go.mod", "v.mod" },
     symlink_destination = true,
   },
   gitignore = true,
@@ -228,6 +228,5 @@ nvim_tree.setup({
     },
   },
 }
-)
 
-return {}
+return opts

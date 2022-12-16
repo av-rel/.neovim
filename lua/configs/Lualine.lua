@@ -1,4 +1,4 @@
-local ok, lualine = pcall(require, 'lualine')
+local ok, _ = pcall(require, 'lualine')
 
 if not ok then
     vim.notify_once('lualine not installed')
@@ -12,7 +12,7 @@ if ok_theme then
     theme = "vscode"
 end
 
-lualine.setup {
+local opts = {
     options = {
         icons_enabled = true,
         theme = theme,
@@ -46,4 +46,6 @@ lualine.setup {
     extensions = {}
 }
 
-return {}
+_.setup(opts)
+
+return opts

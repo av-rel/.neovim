@@ -1,4 +1,4 @@
-local ok, treesitter = pcall(require, "nvim-treesitter")
+local ok, _ = pcall(require, "nvim-treesitter")
 
 if not ok then
     vim.notify_once("nvim-treesitter not installed")
@@ -20,6 +20,6 @@ local opts = {
     },
 }
 
-treesitter.setup(opts)
+_.setup(opts)
 
-return {}
+return opts

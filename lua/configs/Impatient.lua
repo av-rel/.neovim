@@ -5,6 +5,8 @@ if not ok then
     return {}
 end
 
+vim.g.impatient_enable_at_startup = 1
+
 _G.__luacache_config = {
     chunks = {
         enable = true,
@@ -15,7 +17,5 @@ _G.__luacache_config = {
         path = vim.fn.stdpath('cache') .. '/luacache_modpaths',
     }
 }
-
-vim.g.impatient_enable_at_startup = 1
 
 return {}

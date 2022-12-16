@@ -1,4 +1,4 @@
-local ok, telescope = pcall(require, 'telescope')
+local ok, _ = pcall(require, 'telescope')
 
 if not ok then
     vim.notify_once('telescope not installed')
@@ -10,5 +10,7 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+_.setup({})
 
 return {}
