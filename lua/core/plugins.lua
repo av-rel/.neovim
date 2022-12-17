@@ -17,15 +17,17 @@ return require('packer').startup(function(use)
 
   use { 'lewis6991/impatient.nvim', config = require("configs.Impatient") }
   use { 'nvim-lua/plenary.nvim', config = require("configs.Plenary") }
-  use { 'kyazdani42/nvim-web-devicons', config = require("configs.NvimWebDevIcons") }
+  -- use { 'kyazdani42/nvim-web-devicons', config = require("configs.NvimWebDevIcons") }
 
   use { 'Mofiqul/vscode.nvim', config = require("configs.Vscode") }
   use { 'hoob3rt/lualine.nvim', config = require("configs.Lualine") }
   use { 'nvim-lua/telescope.nvim', config = require("configs.Telescope") }
   use { 'nvim-tree/nvim-tree.lua', config = require("configs.NvimTree") }
-  use { 'nvim-treesitter/nvim-treesitter', config = require("configs.NvimTreesitter") }
+  -- use { 'nvim-treesitter/nvim-treesitter', config = require("configs.NvimTreesitter") }
 
+  use { 'mattn/emmet-vim', config = require("configs.Emmet") }
   use { 'windwp/nvim-autopairs', config = require("configs.NvimAutoPairs") }
+  use { 'terrortylor/nvim-comment', config = require("configs.NvimComment") }
   use { 'nvim-lua/popup.nvim', config = require("configs.Popup") }
 
   use { 'github/copilot.vim', config = require("configs.Copilot") }

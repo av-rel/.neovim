@@ -5,11 +5,11 @@ if not ok then
     return {}
 end
 
-local theme = 'auto'
+local theme = 'vscode'
 
 local ok_theme, _ = pcall(require, 'vscode')
-if ok_theme then
-    theme = "vscode"
+if not ok_theme then
+    theme = 'auto'
 end
 
 local opts = {
@@ -17,7 +17,7 @@ local opts = {
         icons_enabled = true,
         theme = theme,
         ignore_focus = {},
-        globalstatus = false,
+        globalstatus = true,
         refresh = {
             statusline = 300,
             tabline = 300,

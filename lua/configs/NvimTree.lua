@@ -7,94 +7,73 @@ end
 
 local opts = {
   view = {
-    adaptive_size = false,
+    adaptive_size = true,
     centralize_selection = false,
     width = 30,
     hide_root_folder = false,
     side = "left",
-    preserve_window_proportions = false,
+    preserve_window_proportions = true,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = {
-        { key = "u", action = "dir_up" },
-      },
     },
-  },
-  float = {
-    enable = true,
-    quit_on_focus_loss = true,
-    open_win_config = {
-      relative = "editor",
-      border = "rounded",
-      width = 30,
-      height = 30,
-      row = 1,
-      col = 1,
-    },
-  },
   renderer = {
-    add_trailing = false,
-    group_empty = false,
-    highlight_git = false,
-    full_name = false,
+    add_trailing = true,
+    group_empty = true,
+    highlight_git = true,
+    full_name = true,
     highlight_opened_files = "none",
     root_folder_label = ":~:s?$?/..?",
     indent_width = 2,
     indent_markers = {
-      enable = false,
+      enable = true,
       inline_arrows = true,
-      icons = {
-        corner = "└",
-        edge = "│",
-        item = "│",
-        bottom = "─",
-        none = " ",
-      },
+      -- icons = {
+      --   corner = "└",
+      --   edge = "│",
+      --   item = "│",
+      --   bottom = "─",
+      --   none = " ",
+      -- },
     },
-    icons = {
-      webdev_colors = true,
-      git_placement = "before",
-      padding = " ",
-      symlink_arrow = " ➛ ",
-      show = {
-        file = true,
-        folder = true,
-        folder_arrow = true,
-        git = true,
-      },
-      glyphs = {
-        -- default = "",
-        -- symlink = "",
-        -- bookmark = "",
-        -- folder = {
-        -- arrow_closed = "",
-        -- arrow_open = "",
-        -- default = "",
-        -- open = "",
-        -- empty = "",
-        -- empty_open = "",
-        -- symlink = "",
-        -- symlink_open = "",
-        -- },
-        git = {
-          unstaged = "✗",
-          staged = "✓",
-          -- unmerged = "",
-          renamed = "➜",
-          untracked = "★",
-          -- deleted = "",
-          ignored = "◌",
-        },
-      },
-    },
-    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md", "package.json", "go.mod", "v.mod" },
+    -- icons = {
+    --   webdev_colors = true,
+    --   git_placement = "before",
+    --   padding = " ",
+    --   symlink_arrow = " ➛ ",
+    --   show = {
+    --     file = true,
+    --     folder = true,
+    --     folder_arrow = true,
+    --     git = true,
+    --   },
+    --   -- glyphs = {
+    --   --   -- default = "",
+    --   --   -- symlink = "",
+    --   --   -- bookmark = "",
+    --   --   -- folder = {
+    --   --   -- arrow_closed = "",
+    --   --   -- arrow_open = "",
+    --   --   -- default = "",
+    --   --   -- open = "",
+    --   --   -- empty = "",
+    --   --   -- empty_open = "",
+    --   --   -- symlink = "",
+    --   --   -- symlink_open = "",
+    --   --   -- },
+    --   --   git = {
+    --   --     unstaged = "✗",
+    --   --     staged = "✓",
+    --   --     -- unmerged = "",
+    --   --     renamed = "➜",
+    --   --     untracked = "★",
+    --   --     -- deleted = "",
+    --   --     ignored = "◌",
+    --   --   },
+    --   -- },
+    -- },
     symlink_destination = true,
   },
-  gitignore = true,
-  ignore = { ".git", "node_modules", ".cache" },
   auto_reload_on_write = true,
   disable_netrw = false,
   hijack_cursor = false,
@@ -128,20 +107,20 @@ local opts = {
     args = {},
   },
   diagnostics = {
-    enable = false,
-    show_on_dirs = false,
+    enable = true,
+    show_on_dirs = true,
     show_on_open_dirs = true,
     debounce_delay = 50,
     severity = {
       min = vim.diagnostic.severity.HINT,
       max = vim.diagnostic.severity.ERROR,
     },
-    icons = {
-      hint = "",
-      info = "",
-      warning = "",
-      error = "",
-    },
+    -- icons = {
+    --   hint = "",
+    --   info = "",
+    --   warning = "",
+    --   error = "",
+    -- },
   },
   filters = {
     dotfiles = false,
@@ -153,14 +132,23 @@ local opts = {
   filesystem_watchers = {
     enable = true,
     debounce_delay = 50,
-    ignore_dirs = {},
+    ignore_dirs = {
+      ".git/",
+      "node_modules/",
+      "target/",
+      "__pycache__/",
+      "pkg/",
+      ".cache/",
+      "cache/",
+      "venv/",
+    },
   },
   git = {
     enable = true,
     ignore = true,
     show_on_dirs = true,
     show_on_open_dirs = true,
-    timeout = 400,
+    timeout = 300,
   },
   actions = {
     use_system_clipboard = true,
@@ -170,7 +158,7 @@ local opts = {
       restrict_above_cwd = false,
     },
     expand_all = {
-      max_folder_discovery = 300,
+      max_folder_discovery = 90,
       exclude = {},
     },
     file_popup = {
@@ -207,7 +195,6 @@ local opts = {
     sync = {
       open = false,
       close = false,
-      ignore = {},
     },
   },
   notify = {
@@ -228,5 +215,7 @@ local opts = {
     },
   },
 }
+
+_.setup(opts)
 
 return opts
