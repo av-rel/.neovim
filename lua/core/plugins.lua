@@ -16,22 +16,23 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' --Package manager
 
   use 'lewis6991/impatient.nvim'
-  use 'kyazdani42/nvim-web-devicons'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-lua/popup.nvim'
 
+  use 'kyazdani42/nvim-web-devicons'
   use 'folke/tokyonight.nvim'
-  use { 'Avimitin/nerd-galaxyline', requires = { 'glepnir/galaxyline.nvim' } }
+  use 'hoob3rt/lualine.nvim'
 
   use 'nvim-tree/nvim-tree.lua'
-  use 'ThePrimeagen/harpoon'
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { 'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim' }
-  }
-  use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-telescope/telescope.nvim'
 
-  use 'github/copilot.vim'
+  use 'christoomey/vim-tmux-navigator'
+  use 'ThePrimeagen/harpoon'
+
   use 'windwp/nvim-autopairs'
   use 'terrortylor/nvim-comment'
+  use 'github/copilot.vim'
+
   use 'folke/which-key.nvim'
 
   if packer_bootstrap then

@@ -1,3 +1,6 @@
 require('core.settings')
 require("core.options")
-require('core.plugins')
+
+if vim.g.vscode == nil then
+    require('core.plugins')
+end

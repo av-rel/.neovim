@@ -24,4 +24,4 @@ theme.setup({
   lualine_bold = true, -- When `true`, section headers in the lualine theme will be bold
 })
 
-vim.cmd "colorscheme tokyonight-night"
+vim.cmd "colorscheme tokyonight-moon"
