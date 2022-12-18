@@ -6,7 +6,7 @@ end
 
 tree.setup({
   sort_by = "name",
-  disable_netrw = true,
+  disable_netrw = false,
   hijack_netrw = true,
   open_on_setup = false,
   open_on_tab = false,
@@ -22,7 +22,7 @@ tree.setup({
     mappings = {
       list = {
         { key = "u", action = "dir_up" },
-        { key = "i", action = "dir_up" },
+        { key = "i", action = "dir_down" },
         { key = "r", action = "refresh" },
         { key = "a", action = "create" },
         { key = "d", action = "remove" },

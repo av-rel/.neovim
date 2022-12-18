@@ -22,6 +22,10 @@ local est = { noremap = true, silent = true }
 
 set("n", "<leader>m", ui.toggle_quick_menu, est)
 set("n", "ma", mark.add_file, est)
-set("n", "m[1-9]", function(val) ui.nav_file(val) end, est)
+
+set("n", "m1", function(val) ui.nav_file(1) end, est)
+set("n", "m2", function(val) ui.nav_file(2) end, est)
+set("n", "m3", function(val) ui.nav_file(3) end, est)
+set("n", "m4", function(val) ui.nav_file(4) end, est)
 
 harp.setup(opts);

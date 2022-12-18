@@ -1,4 +1,4 @@
-local ok, plenary = pcall(require, "plenary")
+local ok, _ = pcall(require, "plenary")
 
 if not ok then
     return

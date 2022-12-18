@@ -8,8 +8,11 @@ local opts = {
     marker_padding = true,
     comment_empty = true,
     comment_empty_trim_whitespace = true,
+    create_mappings = true,
+    hook = nil
 }
 
-vim.keymap.set("n", "<C-/>", ":CommentToggle<CR>", {noremap = true, silent = true})
+vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
+vim.keymap.set("v", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
 
 comment.setup(opts)

@@ -33,8 +33,6 @@ return require('packer').startup(function(use)
   use 'terrortylor/nvim-comment'
   use 'github/copilot.vim'
 
-  use 'folke/which-key.nvim'
-
   if packer_bootstrap then
     require('packer').sync()
   end
