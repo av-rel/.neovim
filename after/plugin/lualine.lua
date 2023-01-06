@@ -8,5 +8,5 @@ end
 line.setup({
     options = {
         theme = "tokyonight",
-    }
+    },
 })

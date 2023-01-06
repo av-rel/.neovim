@@ -31,7 +31,9 @@ return require('packer').startup(function(use)
 
   use 'windwp/nvim-autopairs'
   use 'terrortylor/nvim-comment'
+ 
   use 'github/copilot.vim'
+
 
   if packer_bootstrap then
     require('packer').sync()
