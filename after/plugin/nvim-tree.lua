@@ -8,7 +8,7 @@ tree.setup({
   sort_by = "name",
   disable_netrw = false,
   hijack_netrw = true,
-  open_on_setup = false,
+  open_on_setup = true,
   open_on_tab = false,
   hijack_cursor = true,
   update_cwd = true,
@@ -16,6 +16,10 @@ tree.setup({
     enable = true,
     update_cwd = true,
     ignore_list = { "node_modules", ".git", ".cache", "target" },
+  },
+  system_open = {
+    cmd = nil,
+    args = {},
   },
   view = {
     adaptive_size = true,
@@ -43,7 +47,7 @@ tree.setup({
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    -- dotfiles = true,
   },
 })
 local set = vim.keymap.set
