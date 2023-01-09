@@ -1,1 +1,5 @@
+spell
+.DS_Store
+
+local/
 plugin/packer_compiled.lua
