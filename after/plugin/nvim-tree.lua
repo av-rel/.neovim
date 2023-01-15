@@ -15,7 +15,12 @@ tree.setup({
   update_focused_file = {
     enable = true,
     update_cwd = true,
-    ignore_list = { "node_modules", ".git", ".cache", "target" },
+    ignore_list = { "node_modules/", ".git/", ".cache/", "target/", "bin/" },
+  },
+  git = {
+    enable = true,
+    ignore = true,
+    timeout = 500
   },
   system_open = {
     cmd = nil,
@@ -47,11 +52,13 @@ tree.setup({
     group_empty = true,
   },
   filters = {
-    -- dotfiles = true,
+    dotfiles = true,
   },
 })
+
 local set = vim.keymap.set
 
 local opts = { noremap = true, silent = true }
-set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+
 set("n", "<leader>f", ":NvimTreeFocus<CR>", opts)
+set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
