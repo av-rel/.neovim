@@ -13,5 +13,10 @@ return function(use)
   use 'windwp/nvim-autopairs'
   use 'terrortylor/nvim-comment'
 
+  use 'ervandew/supertab'
+  use 'romgrk/barbar.nvim'
+
+  use 'github/copilot.vim'
+  
 end
 
