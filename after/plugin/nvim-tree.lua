@@ -8,7 +8,6 @@ tree.setup({
   sort_by = "name",
   disable_netrw = false,
   hijack_netrw = true,
-  open_on_setup = true,
   open_on_tab = false,
   hijack_cursor = true,
   update_cwd = true,

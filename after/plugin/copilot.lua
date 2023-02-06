@@ -1,7 +1,7 @@
-local ok, gtp = pcall(require, "copilot.suggestion")
+local ok, gtp = pcall(require, "copilot")
 
 if not ok then
     return
 end
 
-gtp.toggle_auto_trigger()
+gtp.setup{}
