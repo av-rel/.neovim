@@ -44,13 +44,10 @@ require('packer').startup(function(use)
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
 
-  -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
-  local has_plugins, plugins = pcall(require, 'core.plugins')
+  local has_plugins, plugins = pcall(require, 'plugins')
   if has_plugins then
     plugins(use)
   end
-
-  require('core.settings')
 
   if is_bootstrap then
     require('packer').sync()
@@ -79,6 +76,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
+require("settings")
 vim.opt.background = "dark"
 vim.cmd.colorscheme 'oxocarbon-lua'
 
@@ -106,7 +104,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'oxocarbon-lua',
+    theme = 'auto',
     component_separators = '|',
     section_separators = '',
   },
@@ -208,11 +206,11 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
+  clangd = {},
+  gopls = {},
+  pyright = {},
+  rust_analyzer = {},
+  tsserver = {},
 
   sumneko_lua = {
     Lua = {
