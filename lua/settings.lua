@@ -24,8 +24,19 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.smartindent = true
 
-vim.opt.guifont = "Consolas:h12"
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.smartindent = true
-vim.opt.smarttab = true
+vim.opt.guifont="Consolas:h12"
+vim.opt.tabstop=4
+vim.opt.shiftwidth=4
+vim.opt.smartindent=true
+vim.opt.smarttab=true
+
+vim.cmd[[
+    autocmd FileType c set shiftwidth=4
+    autocmd FileType go set shiftwidth=4
+    autocmd FileType v set shiftwidth=4
+    autocmd FileType nim set shiftwidth=4
+    autocmd FileType rs set shiftwidth=4
+    autocmd FileType python set shiftwidth=4
+    autocmd FileType js set shiftwidth=4
+    autocmd FileType ts set shiftwidth=4
+]]

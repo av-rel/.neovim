@@ -76,7 +76,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
-require("settings")
 vim.opt.background = "dark"
 vim.cmd.colorscheme 'oxocarbon-lua'
 
@@ -293,5 +292,4 @@ cmp.setup {
   },
 }
 
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+require("settings");
