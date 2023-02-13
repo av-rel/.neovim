@@ -76,8 +76,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
-vim.opt.background = "dark"
-vim.cmd.colorscheme 'oxocarbon-lua'
+require("settings");
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
@@ -210,13 +209,6 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
-
-  sumneko_lua = {
-    Lua = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
-  },
 }
 
 -- Setup neovim lua configuration
@@ -291,5 +283,3 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
-
-require("settings");
