@@ -211,7 +211,8 @@ local servers = {
   rust_analyzer = {},
   tsserver = {},
   emmet_ls = {},
-  remark_ls = {}
+  marksman = {},
+  intelephense = {},
 }
 
 -- Setup neovim lua configuration
