@@ -9,6 +9,8 @@ return function(use)
     use 'windwp/nvim-autopairs'
     use 'terrortylor/nvim-comment'
     use 'romgrk/barbar.nvim'
+    use 'TimUntersberger/neogit'
+    use 'sindrets/diffview.nvim'
     use 'github/copilot.vim'
 
 end
