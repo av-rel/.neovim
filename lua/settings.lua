@@ -25,8 +25,24 @@ vim.g.maplocalleader = ' '
 vim.opt.smartindent = true
 
 vim.opt.background = "dark"
-vim.opt.guifont="Consolas:h12"
 vim.opt.tabstop=4
 vim.opt.shiftwidth=4
 vim.opt.smartindent=true
 vim.opt.smarttab=true
+
+vim.opt.guifont="Consolas:h12"
+
+local font_size = 12
+
+function _G.increase_font_size()
+    font_size = font_size + 1
+    vim.o.guifont = "Consolas:h" .. font_size
+end
+
+function _G.decrease_font_size()
+    font_size = font_size - 1
+    vim.o.guifont = "Consolas:h" .. font_size
+end
+
+vim.api.nvim_set_keymap('n', '<C-=>', ':lua increase_font_size()<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<C-->', ':lua decrease_font_size()<CR>', {noremap = true, silent = true})
