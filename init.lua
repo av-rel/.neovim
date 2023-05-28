@@ -206,13 +206,12 @@ end
 local servers = {
   clangd = {},
   gopls = {},
-  nimls = {},
-  ols = {},
   rust_analyzer = {},
-  tsserver = {},
+  tsserver = {},A
   pyright = {},
   jsonls = {},
   emmet_ls = {},
+  cssls = {},
 }
 
 -- Setup neovim lua configuration
