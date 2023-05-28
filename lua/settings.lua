@@ -30,9 +30,8 @@ vim.opt.shiftwidth=4
 vim.opt.smartindent=true
 vim.opt.smarttab=true
 
-vim.opt.guifont="Consolas:h12"
-
 local font_size = 12
+vim.opt.guifont="Consolas:h" .. font_size
 
 function _G.increase_font_size()
     font_size = font_size + 1
@@ -46,3 +45,4 @@ end
 
 vim.api.nvim_set_keymap('n', '<C-=>', ':lua increase_font_size()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-->', ':lua decrease_font_size()<CR>', {noremap = true, silent = true})
+
