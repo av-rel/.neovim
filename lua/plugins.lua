@@ -15,7 +15,7 @@ return function(use)
 
     use "TimUntersberger/neogit"
     use "sindrets/diffview.nvim"
-	use "APZelos/blamer.nvim"
+    use "APZelos/blamer.nvim"
 
     use "samodostal/image.nvim"
     use "mfussenegger/nvim-dap"
