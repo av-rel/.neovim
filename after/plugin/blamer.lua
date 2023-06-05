@@ -4,4 +4,4 @@ if not ok then
 	return 
 end
 
-blamer.setup({})
+vim.cmd(":BlamerShow")
