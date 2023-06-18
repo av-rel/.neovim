@@ -1,8 +1,5 @@
 local ok, comment = pcall(require, "nvim_comment")
-
-if not ok then
-    return
-end
+if not ok then return end
 
 local opts = {
     marker_padding = true,

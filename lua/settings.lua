@@ -18,16 +18,14 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
-vim.o.termguicolors = true
+vim.o.termguicolors = false
 vim.o.completeopt = 'menuone,noselect'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.smartindent = true
-
 vim.opt.background = "dark"
-vim.opt.tabstop=4
-vim.opt.shiftwidth=4
-vim.opt.smartindent=true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 vim.opt.smarttab=true
 
 local font_size = 12
@@ -48,3 +46,5 @@ vim.api.nvim_set_keymap('n', '<C-->', ':lua decrease_font_size()<CR>', {noremap 
 
 vim.api.nvim_set_keymap('n', '<A-Up>',	':m .-2<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<A-Down>', ':m .+1<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<A-Up>',	":m <-2<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<A-Down>', ":m >+1<CR>", {noremap = true, silent = true})

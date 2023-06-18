@@ -1,24 +1,26 @@
 return function(use)
 
-    use "lewis6991/impatient.nvim"
-    use "nvim-lua/plenary.nvim"
-
     use "catppuccin/nvim"
     use "kyazdani42/nvim-web-devicons"
-    use "windwp/nvim-autopairs"
+    use { "windwp/nvim-autopairs",
+       	config = function() 
+            local ok, pairs = pcall(require, "nvim-autopairs") 
+            if ok then pairs.setup {} end
+        end
+    }
     use "terrortylor/nvim-comment"
-
     use "nvim-tree/nvim-tree.lua"
     use "christoomey/vim-tmux-navigator"
     use "romgrk/barbar.nvim"
-    use "ThePrimeagen/harpoon"
 
     use "TimUntersberger/neogit"
     use "sindrets/diffview.nvim"
-    use "APZelos/blamer.nvim"
-
+    use { "APZelos/blamer.nvim",
+        config = function() 
+            local ok, blamer = pcall(require, "blamer")
+            if ok then blamer.setup {} end
+        end
+    }
     use "samodostal/image.nvim"
-    use "mfussenegger/nvim-dap"
-
 end
 

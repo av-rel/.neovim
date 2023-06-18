@@ -1,8 +1,5 @@
 local ok, tree = pcall(require, "nvim-tree")
-
-if not ok then
-  return
-end
+if not ok then return end
 
 tree.setup({
   sort_by = "name",
@@ -14,7 +11,7 @@ tree.setup({
   update_focused_file = {
     enable = true,
     update_cwd = true,
-    ignore_list = { "node_modules/", ".git/", ".cache/", "target/", "bin/" },
+    ignore_list = { "node_modules/", ".git/" },
   },
   git = {
     enable = true,

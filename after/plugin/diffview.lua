@@ -1,8 +1,5 @@
 local ok, diffview = pcall(require, "diffview")
-
-if not ok then
-    return
-end
+if not ok then return end
 
 local actions = require("diffview.actions")
 

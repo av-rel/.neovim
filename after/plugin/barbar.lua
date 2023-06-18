@@ -1,3 +1,6 @@
+local ok, _ = pcall(require, 'barbar')
+if not ok then return end
+
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
