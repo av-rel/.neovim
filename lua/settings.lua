@@ -41,10 +41,13 @@ function _G.decrease_font_size()
     vim.o.guifont = "Consolas:h" .. font_size
 end
 
+
 vim.api.nvim_set_keymap('n', '<C-=>', ':lua increase_font_size()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<C-->', ':lua decrease_font_size()<CR>', {noremap = true, silent = true})
 
+
 vim.api.nvim_set_keymap('n', '<A-Up>',	':m .-2<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<A-Down>', ':m .+1<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<A-Up>',	":m <-2<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<A-Down>', ":m >+1<CR>", {noremap = true, silent = true})
+
+vim.api.nvim_set_keymap('v', '<A-Up>',	":'<,'>m .-2<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<A-Down>', ":'<,'>m .+1<CR>", {noremap = true, silent = true})

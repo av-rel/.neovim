@@ -1,5 +1,4 @@
 return function(use)
-
     use "catppuccin/nvim"
     use "kyazdani42/nvim-web-devicons"
     use { "windwp/nvim-autopairs",
@@ -9,7 +8,7 @@ return function(use)
         end
     }
     use "terrortylor/nvim-comment"
-    use "nvim-tree/nvim-tree.lua"
+    use { "nvim-tree/nvim-tree.lua" , branch = "disable-view-mappings" }
     use "christoomey/vim-tmux-navigator"
     use "romgrk/barbar.nvim"
 
