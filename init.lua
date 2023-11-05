@@ -14,7 +14,7 @@ require('packer').startup(function(use)
     requires = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-      'j-hui/fidget.nvim',
+      {'j-hui/fidget.nvim', tag = "legacy"},
       'folke/neodev.nvim',
     },
   }
@@ -194,10 +194,6 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  pyright = {},
-  emmetls = {},
-  cssls = {},
-  tsserver = {},
 }
 
 -- Setup neovim lua configuration

@@ -8,11 +8,11 @@ return function(use)
         end
     }
     use "terrortylor/nvim-comment"
-    use { "nvim-tree/nvim-tree.lua" , branch = "disable-view-mappings" }
+    use { "nvim-tree/nvim-tree.lua" }
     use "christoomey/vim-tmux-navigator"
     use "romgrk/barbar.nvim"
 
-    use "TimUntersberger/neogit"
+    use {"NeogitOrg/neogit", config = true }
     use "sindrets/diffview.nvim"
     use { "APZelos/blamer.nvim",
         config = function() 
@@ -20,6 +20,5 @@ return function(use)
             if ok then blamer.setup {} end
         end
     }
-    use "samodostal/image.nvim"
 end
 

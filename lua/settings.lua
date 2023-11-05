@@ -22,7 +22,6 @@ vim.o.updatetime = 200
 vim.opt.hlsearch = false
 vim.o.incsearch = true
 vim.wo.signcolumn = 'yes'
-vim.o.termguicolors = false
 vim.o.completeopt = 'menu,menuone,noinsert,noselect,preview'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -36,23 +35,6 @@ vim.opt.softtabstop=4
 vim.opt.autoindent=true
 vim.opt.backspace='indent,eol,start'
 vim.opt.wrap = true
-
-local font_size = 12
-vim.opt.guifont="Consolas:h" .. font_size
-
-function _G.increase_font_size()
-    font_size = font_size + 1
-    vim.o.guifont = "Consolas:h" .. font_size
-end
-
-function _G.decrease_font_size()
-    font_size = font_size - 1
-    vim.o.guifont = "Consolas:h" .. font_size
-end
-
-vim.api.nvim_set_keymap('n', '<C-=>', ':lua increase_font_size()<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<C-->', ':lua decrease_font_size()<CR>', {noremap = true, silent = true})
-
 
 vim.api.nvim_set_keymap('n', '<A-Up>',	':m .-2<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<A-Down>', ':m .+1<CR>', {noremap = true, silent = true})
