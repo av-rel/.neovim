@@ -26,7 +26,6 @@ vim.o.completeopt = 'menu,menuone,noinsert,noselect,preview'
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 vim.opt.smartindent = true
-vim.opt.background = "dark"
 vim.opt.tabstop=4
 vim.opt.shiftwidth=4
 vim.opt.smarttab=true

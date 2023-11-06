@@ -1,5 +1,7 @@
 return function(use)
     use "catppuccin/nvim"
+    use 'Mofiqul/vscode.nvim'
+
     use "kyazdani42/nvim-web-devicons"
     use { "windwp/nvim-autopairs",
        	config = function() 
