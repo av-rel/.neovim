@@ -8,7 +8,7 @@ local opts = {
     create_mappings = true,
 }
 
-vim.keymap.set("n", "<C-/>", ":CommentToggle<CR>", {noremap = true, silent = true})
-vim.keymap.set("v", "<C-/>", ":CommentToggle<CR>", {noremap = true, silent = true})
-
 comment.setup(opts)
+
+vim.keymap.set("n", "<C-w>", ":CommentToggle<CR>", {noremap = true, silent = true})
+vim.keymap.set("v", "<C-w>", ":CommentToggle<CR>", {noremap = true, silent = true})

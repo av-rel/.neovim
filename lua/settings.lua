@@ -35,8 +35,8 @@ vim.opt.autoindent=true
 vim.opt.backspace='indent,eol,start'
 vim.opt.wrap = true
 
-vim.api.nvim_set_keymap('n', '<A-Up>',	':m .-2<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<A-Down>', ':m .+1<CR>', {noremap = true, silent = true})
+nmap('n', '<A-Up>',	':m .-2<CR>', {noremap = true, silent = true})
+nmap('n', '<A-Down>', ':m .+1<CR>', {noremap = true, silent = true})
 
-vim.api.nvim_set_keymap('v', '<A-Up>',	":'<,'>m .-2<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<A-Down>', ":'<,'>m .+1<CR>", {noremap = true, silent = true})
+vmap('v', '<A-Up>',	":'<,'>m .-2<CR>", {noremap = true, silent = true})
+vmap('v', '<A-Down>', ":'<,'>m .+1<CR>", {noremap = true, silent = true})
