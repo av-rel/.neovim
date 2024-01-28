@@ -29,7 +29,10 @@ tree.setup({
     group_empty = true,
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
+    git_clean = false,
+    no_buffer = false,
+    custom = { 'node_modules', ".git", ".*cache", "*cache" },
   },
 })
 
@@ -38,4 +41,4 @@ local set = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 set("n", "<leader>f", ":NvimTreeFocus<CR>", opts)
-set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+set("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
