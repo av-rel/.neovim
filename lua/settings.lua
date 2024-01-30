@@ -40,3 +40,10 @@ vim.keymap.set('n', '<A-Down>', ':m .+1<CR>', {noremap = true, silent = true})
 
 vim.keymap.set('v', '<A-Up>',	":'<,'>m .-2<CR>", {noremap = true, silent = true})
 vim.keymap.set('v', '<A-Down>', ":'<,'>m .+1<CR>", {noremap = true, silent = true})
+
+vim.cmd[[
+    noremap <Up> <Nop>
+    noremap <Down> <Nop>
+    noremap <Left> <Nop>
+    noremap <Right> <Nop>
+]]
