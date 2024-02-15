@@ -30,9 +30,7 @@ tree.setup({
   },
   filters = {
     dotfiles = false,
-    git_clean = false,
-    no_buffer = false,
-    custom = { 'node_modules', ".git", ".*cache", "*cache" },
+    custom = { 'node_modules', ".git" },
   },
 })
 
