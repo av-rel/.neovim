@@ -1,8 +1,6 @@
-vim.opt.hidden = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.cursorline = true
-vim.opt.ruler = true
 vim.opt.cursorcolumn = false
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -33,7 +31,6 @@ vim.opt.tabstop=4
 vim.opt.softtabstop=4
 vim.opt.autoindent=true
 vim.opt.backspace='indent,eol,start'
-vim.opt.wrap = true
 
 vim.keymap.set('n', '<A-Up>',	':m .-2<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<A-Down>', ':m .+1<CR>', {noremap = true, silent = true})
