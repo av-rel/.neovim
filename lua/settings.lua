@@ -23,7 +23,7 @@ opt.number          = true
 opt.relativenumber  = true
 opt.splitbelow      = true
 opt.splitright      = true
-opt.showmode        = true
+opt.showmode        = false
 
 opt.tabstop         = 4
 opt.softtabstop     = 4

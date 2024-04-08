@@ -1,21 +1,21 @@
 local plugins = {
     { 'blazkowolf/gruber-darker.nvim' },
+    { 'navarasu/onedark.nvim' },
+
     { 'nvim-tree/nvim-web-devicons' },
     { 'nvim-lualine/lualine.nvim' },
     { 'nvim-tree/nvim-tree.lua' },
+    { 'nvim-telescope/telescope.nvim', tag = '0.1.6' },
+
+    { 'tpope/vim-fugitive' },
     { 'lewis6991/gitsigns.nvim' },
     { 'fedepujol/move.nvim' },
     { 'windwp/nvim-autopairs' },
     { 'terrortylor/nvim-comment' },
     { 'christoomey/vim-tmux-navigator' },
+    { 'mg979/vim-visual-multi' },
     { 'romgrk/barbar.nvim' },
-    { 'NeogitOrg/neogit',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'sindrets/diffview.nvim',
-            { 'nvim-telescope/telescope.nvim', tag = '0.1.6' }
-        },
-    },
+
     { 'neovim/nvim-lspconfig',
         requires = {
             'williamboman/mason.nvim',
@@ -60,14 +60,6 @@ packer.startup(function(use)
         print '       then restart nvim'
         print '=================================='
     end
-
-    -- autorequire plugin configs
-    local plugin_config_path = vim.fn.stdpath('config') .. '/configs'
-    local plugin_config_dir = vim.fn.readdir(plugin_config_path, [[v:val =~ '\.lua$']])
-    for _, file in ipairs(plugin_config_dir) do
-        require('configs.' .. file:gsub('%.lua$', ''))
-    end
-
 end)
 
 local packer_group = vim.api.nvim_create_augroup('Packer', { clear = true })
