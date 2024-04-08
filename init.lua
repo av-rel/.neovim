@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+require("mappings")
+require("settings")
+require("plugins")
+=======
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
@@ -75,6 +80,7 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+>>>>>>> master
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -86,6 +92,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+<<<<<<< HEAD
+=======
 
 -- Set lualine as statusline
 -- See `:help lualine.txt`
@@ -234,3 +242,4 @@ cmp.setup {
 }
 
 require("settings")
+>>>>>>> master
