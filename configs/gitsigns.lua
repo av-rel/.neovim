@@ -1,4 +1,3 @@
-<<<<<<< HEAD:configs/gitsigns.lua
 local gs = require('gitsigns')
 
 gs.setup({
@@ -52,22 +51,3 @@ gs.setup({
         map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
     end
 })
-=======
-local ok, gitsigns = pcall(require, 'lualine')
-
-if not ok then 
-  return
-end
-
-gitsigns.setup {
-  signs = {
-    add = { text = '+' },
-    change = { text = '~' },
-    delete = { text = '_' },
-    topdelete = { text = '‾' },
-    changedelete = { text = '~' },
-  },
-}
-
-
->>>>>>> master:after/plugin/gitsigns.lua
