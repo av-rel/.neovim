@@ -1,8 +1,10 @@
 local plugins = {
     { 'blazkowolf/gruber-darker.nvim' },
     { 'navarasu/onedark.nvim' },
-
     { 'nvim-tree/nvim-web-devicons' },
+
+    { 'nvim-lua/plenary.nvim', tag = 'v0.1.4' },
+
     { 'nvim-lualine/lualine.nvim' },
     { 'nvim-tree/nvim-tree.lua' },
     { 'nvim-telescope/telescope.nvim', tag = '0.1.6' },
